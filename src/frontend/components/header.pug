@@ -1,0 +1,11 @@
+nav.navbar.navbar-dark.bg-dark
+    .container
+        a.navbar-brand(href="/")
+            img.d-inline-block.align-top(src="/static/logo.png" width="30" height="30")
+            span.ms-2 TIC TAC TOE
+        p
+            if(player_name)
+                span.text-light.text-center Hola
+                b.text-light.ms-2 #{player_name}
+            else
+                span.text-light Inicia sesión con tu nombre

@@ -1,0 +1,57 @@
+doctype html
+html(lang="es")
+    head
+        include ../components/head.pug
+        title Partida - Tic Tac Toe
+        style 
+            include ../css/table.css
+    body
+        include ../components/header.pug
+        div.min-vh-100
+            .container
+                .row
+                    .col-12.my-5.text-center
+                        span.text-center.fs-1#player1_name #{player_name}
+                        b.text-center.fs-1.mx-2 vs
+                        span.text-center.fs-1#player2_name 
+                            i.fa-solid.fa-spinner.fa-spin
+            .container.d-none#table-game
+                .row
+                    .col-12.my-5
+                        h5.text-center
+                            span.me-2 Turno de
+                            b#turn_name Harold
+                .row
+                    .col-12
+                        .table-responsive
+                            table.table.table-bordered.m-auto
+                                tbody
+                                    tr
+                                        td
+                                            button.fs-1.fw-bold.btn-iteration#btn-0-0
+                                        td
+                                            button.fs-1.fw-bold.btn-iteration#btn-0-1
+                                        td
+                                            button.fs-1.fw-bold.btn-iteration#btn-0-2
+                                    tr
+                                        td
+                                            button.fs-1.fw-bold.btn-iteration#btn-1-0
+                                        td
+                                            button.fs-1.fw-bold.btn-iteration#btn-1-1
+                                        td
+                                            button.fs-1.fw-bold.btn-iteration#btn-1-2
+                                    tr
+                                        td
+                                            button.fs-1.fw-bold.btn-iteration#btn-2-0
+                                        td
+                                            button.fs-1.fw-bold.btn-iteration#btn-2-1
+                                        td
+                                            button.fs-1.fw-bold.btn-iteration#btn-2-2
+
+        include ../components/footer.pug
+    script(src="/socket.io/socket.io.js")
+    script.
+        let GAME = !{JSON.stringify(game)};
+        let SESSION_ID = !{JSON.stringify(session.id)};
+    script
+        include ../js/table.js

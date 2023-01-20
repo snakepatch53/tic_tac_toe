@@ -1,0 +1,26 @@
+doctype html
+html(lang="es")
+    head
+        include ../components/head.pug
+        title Juego de Tic Tac Toe
+        style 
+            include ../css/index.css
+    body 
+        include ../components/header.pug
+        .container.min-vh-100
+            .row
+                .col-12
+                    form.mt-5#form
+                        .row(style="max-width: 400px; margin: 0 auto;")
+                            .col-12.text-center.mt-5.mb-5
+                                i.fas.fa-user.me-1.fs-1
+                            .col-12.text-center
+                                label.fs-5 Ingresa tu nombre para jugar: 
+                            .col-12.text-center.mt-5
+                                input.w-100.p-2.text-center(type="text" placeholder="Nombre del jugador" name="player_name")
+                            .col-12.text-center.mt-5
+                                input.w-100(type="submit" value="Jugar" class="btn btn-primary")
+
+        include ../components/footer.pug
+    script
+        include ../js/index.js
